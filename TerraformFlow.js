@@ -666,6 +666,10 @@ if (runModelInferenceTemplate) {
   template = template + `\nstudio_eip={\n${runModelInferenceTemplate}\n}`
   tfvar = tfvar + tfvarbegin + "studio_eip" + tfvarmid + runModelInferenceTemplate + tfvarend
 }
+if (queuesTemplate) {
+  template = template + `\nstudio_queues={\n${queuesTemplate}\n}`
+  tfvar = tfvar + tfvarbegin + "studio_eip" + tfvarmid + queuesTemplate + tfvarend
+}
 
 
 fs.writeFile("output.tfvars", template

@@ -593,10 +593,11 @@ runModelInferenceTemplate = runModelInferenceTemplate.split('\n').slice(1).join(
 let tfvarbegin = "\nvariable \""
 let tfvarmid = "\" {\n\ttype = object({\n\t"
 let tfvarend = "\n\t\t\}\)\n\tsensitive = false\n}"
-let tfvar = "variable \"studio_base\" {\n\ttype = object({\n\t\tfriendly_name = string\n\t\t})\n\tsensitive = false\n}"
+let tfvar = "variable \"studio_base\" {\n\ttype = object({\n\t\tfriendly_name = string\n\t\t\commit_message = string\n\t\t})\n\tsensitive = false\n}"
 
 let template = `studio_base = {
 \tfriendly_name = ${JSON.stringify(newFlow.description)}
+\tcommit_message = "First Commit"
 }`
 if (promptTemplate) {
   template = template + `\nstudio_prompts={\n${promptTemplate}\n}`

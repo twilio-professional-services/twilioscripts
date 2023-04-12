@@ -1,6 +1,7 @@
 variable "studio_base" {
 	type = object({
 		friendly_name = string
+		commit_message = string
 		})
 	sensitive = false
 }

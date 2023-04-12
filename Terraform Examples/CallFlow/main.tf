@@ -20,55 +20,13 @@ variable "credentials" {
     password    = string
   })
 }
-variable "studio_base" {
-  type = object({
-    friendly_name  = string
-    commit_message = string
-  })
-  sensitive = false
-}
 
 resource "twilio_studio_flows_v2" "flow" {
 
   commit_message = var.studio_base.commit_message
   friendly_name  = var.studio_base.friendly_name
   status         = "published"
-  definition     = jsonencode({
-    "description": "${var.studio_base.friendly_name}",
-    "states": [
-        {
-            "name": "Trigger",
-            "type": "trigger",
-            "transitions": [
-                {
-                    "event": "incomingMessage"
-                },
-                {
-                    "event": "incomingCall"
-                },
-                {
-                    "event": "incomingConversationMessage"
-                },
-                {
-                    "event": "incomingRequest"
-                },
-                {
-                    "event": "incomingParent"
-                }
-            ],
-            "properties": {
-                "offset": {
-                    "x": 0,
-                    "y": 0
-                }
-            }
-        }
-    ],
-    "initial_state": "Trigger",
-    "flags": {
-        "allow_concurrent_calls": true
-    }
-})
+  definition     = jsonencode(<your call flow json>)
 }
 
 output "flow_webhook" {

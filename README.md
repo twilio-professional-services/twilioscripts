@@ -14,7 +14,7 @@ Paste your JSON into a new file in the TwilioScripts directory (e.g. myflow.json
 
 run the following command:
 
-node.js TerraformFlow.js <<flow-name>>
+node.js TerraformFlow.js << flow-name >>
 
 This will provide the following output:
   
@@ -61,7 +61,7 @@ resource "twilio_studio_flows_v2" "flow" {
   &nbsp;&nbsp;commit_message = "first draft"  
   &nbsp;&nbsp;friendly_name  = "terraform flow"  
   &nbsp;&nbsp;status         = "draft"  
-  &nbsp;&nbsp;definition = jsonencode( <<output.json goes here >>)  
+  &nbsp;&nbsp;definition = jsonencode( << output.json goes here  >>)  
 }  
 
 

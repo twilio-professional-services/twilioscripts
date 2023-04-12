@@ -192,6 +192,7 @@ resource "twilio_taskrouter_workspaces_task_queues_v1" "InboundQ7" {
 resource "twilio_taskrouter_workspaces_workflows_v1" "InboundWorkflow" {
   workspace_sid = var.workspaceSid
   friendly_name = "Inbound"
+  task_reservation_timeout = 12
   configuration = jsonencode({
     task_routing : {
       filters : [
@@ -265,6 +266,7 @@ resource "twilio_taskrouter_workspaces_workflows_v1" "InboundWorkflow" {
 resource "twilio_taskrouter_workspaces_workflows_v1" "TransferWorkflow" {
   workspace_sid = var.workspaceSid
   friendly_name = "Transfer-to-worker"
+  task_reservation_timeout = 12
   configuration = jsonencode({
     "task_routing" : {
       "filters" : [

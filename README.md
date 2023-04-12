@@ -74,7 +74,7 @@ terraform {
 &nbsp;&nbsp;required_providers {  
 &nbsp;&nbsp;&nbsp;&nbsp;twilio = {  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source  = "twilio/twilio"  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version = ">=0.18.15"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version = ">=0.18.18"  
 &nbsp;&nbsp;&nbsp;&nbsp;}  
 &nbsp;&nbsp;}  
 }  
